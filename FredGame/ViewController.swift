@@ -18,8 +18,9 @@ class ViewController: UIViewController {
     var username = "NONAME"
 
     // MARK: Outlets
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var scoresButton: UIButton!
+
+    @IBOutlet weak var scoresButton: UIBarButtonItem!
+    @IBOutlet weak var playButton: UIBarButtonItem!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -49,14 +50,14 @@ class ViewController: UIViewController {
         requestNickname()
     }
   
-    // MARK: Actions
-    @IBAction func startGame(_ sender: Any) {
+    // MARK: Actions       
+    
+    @IBAction func startGame(_ sender: UIBarButtonItem) {
         status.text = "🤔"
         playRound(roundNumber: 1)
         score = 0
         scoreLabel.text = "0"
     }
-    
     @IBAction func userResponse(_ sender: UIButton) {
         let pressedButtonIndex = buttonsGrid.firstIndex(of: sender)
         let currentPendingCounter = Int(self.pendingCounter.text!)
