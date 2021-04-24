@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341D09742633A2F1005C73B5 /* User.txt in Resources */ = {isa = PBXBuildFile; fileRef = 341D09732633A2F1005C73B5 /* User.txt */; };
 		AB03C104262C5AD000CD837F /* FredScoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03C103262C5AD000CD837F /* FredScoreService.swift */; };
 		AB0927C125FFD10E008B105D /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0927C025FFD10E008B105D /* Top10ViewController.swift */; };
 		AB737A56262BA9BE005CAF3E /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB737A55262BA9BE005CAF3E /* Score.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341D09732633A2F1005C73B5 /* User.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = User.txt; sourceTree = "<group>"; };
 		AB03C103262C5AD000CD837F /* FredScoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FredScoreService.swift; sourceTree = "<group>"; };
 		AB0927C025FFD10E008B105D /* Top10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10ViewController.swift; sourceTree = "<group>"; };
 		AB737A55262BA9BE005CAF3E /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				AB7F836725FFD59A004AC3F8 /* Top10.swift */,
 				AB737A55262BA9BE005CAF3E /* Score.swift */,
 				AB03C103262C5AD000CD837F /* FredScoreService.swift */,
+				341D09732633A2F1005C73B5 /* User.txt */,
 			);
 			path = FredGame;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABDB04A225FED55B008CD5BE /* LaunchScreen.storyboard in Resources */,
+				341D09742633A2F1005C73B5 /* User.txt in Resources */,
 				ABDB049F25FED55B008CD5BE /* Assets.xcassets in Resources */,
 				ABDB049D25FED55A008CD5BE /* Main.storyboard in Resources */,
 			);

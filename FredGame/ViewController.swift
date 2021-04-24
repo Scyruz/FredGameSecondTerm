@@ -47,7 +47,28 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        requestNickname()
+        
+        let fileName = "User"
+        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        
+        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+        print("FilePath: \(fileURL.path)")
+        
+        var readString = "" // Used to store the file contents
+        do {
+            // Read the file contents
+            readString = try String(contentsOf: fileURL)
+        } catch let error as NSError {
+            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
+        }
+
+        print("File Text: \(readString)")
+        
+        if readString == ""{
+            requestNickname()
+        } else {
+            username = readString
+        }
     }
   
     // MARK: Actions       
@@ -106,15 +127,14 @@ class ViewController: UIViewController {
         if segue.identifier == "showTopScores" {
             let controller = (segue.destination as! Top10ViewController)
             controller.top10data = top10
-            /*
+            
             top10.loadData() {
                 () in
                 DispatchQueue.main.async {
                     controller.scoreTableView.reloadData()
                 }
-                
+        
             }
-            */
         }
     }
     
@@ -163,8 +183,25 @@ class ViewController: UIViewController {
             let textFields = alertController.textFields
             let nicknameTextfield = textFields?.first
             self.username = nicknameTextfield?.text! ?? "NONAME"
-        }
+            
+            // Save data to file
+                    let fileName = "User"
+                    let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                    
+                    let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+                    print("FilePath: \(fileURL.path)")
+                    
+            let writeString = self.username
+                    do {
+                        // Write to the file
+                        try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+                    } catch let error as NSError {
+                        print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
+                    }
+                 
+}
         alertController.addAction(doneAction)
+        
 
         present(alertController, animated: true, completion: nil)
     }
