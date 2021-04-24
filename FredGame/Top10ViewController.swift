@@ -11,8 +11,7 @@ import CoreData
 class Top10ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var scoreTableView: UITableView!
-    var managedObjectContext : NSManagedObjectContext!
-    
+   
     
     func configureView() {
        
@@ -33,6 +32,12 @@ class Top10ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }   
     }
     
+    var service : FredScoreService? {
+        didSet {
+
+        }
+    }
+    
     // MARK: Table View
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -51,6 +56,7 @@ class Top10ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
         cell.textLabel!.text = df.string(from: score.date)+" "+score.name+" "+String(score.points)
+        //service?.makePostCall(newScore: score)
         return cell
     }
 }

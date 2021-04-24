@@ -44,7 +44,25 @@ class FredScoreService {
                     var top10List : [Score] = []
                     for (index, element) in top10Response.enumerated() {
                         print(index, ":", element)
-                        let score = Score(name: "GROGU", date: Date(), points: 200)
+                        
+                        guard let scoreName = element["name"] as? String else {
+                               print("Could not get name from JSON")
+                            return
+                        }
+                        
+                        guard let scoreDate = element["date"] as? String else {
+                               print("Could not get date from JSON")
+                            return
+                        }
+                        
+                        guard let scorePoints = element["points"] as? Int else {
+                               print("Could not get points from JSON")
+                            return
+                        }
+                        
+                        let dateFormatter = DateFormatter()
+                        
+                        let score = Score(name: scoreName, date: dateFormatter.date(from: scoreDate) ?? Date(), points: scorePoints)
 
                         top10List.append(score)
                     }
@@ -65,8 +83,7 @@ class FredScoreService {
             return
         }
     
-        var urlRequest = URLRequest(url: url)
-
+        let urlRequest = URLRequest(url: url)
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
             
@@ -75,6 +92,8 @@ class FredScoreService {
             guard error == nil else {
                 print("error calling POST on /scores")
                 print(error!)
+                    
+                
                 return
             }
             
