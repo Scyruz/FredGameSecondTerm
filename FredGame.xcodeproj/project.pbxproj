@@ -49,6 +49,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341D09762633B4AF005C73B5 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				ABDB04A025FED55B008CD5BE /* LaunchScreen.storyboard */,
+				ABDB049B25FED55A008CD5BE /* Main.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		341D09772633B4D8005C73B5 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				ABDB049725FED55A008CD5BE /* SceneDelegate.swift */,
+				ABDB049525FED55A008CD5BE /* AppDelegate.swift */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		341D09782633B4F4005C73B5 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB0927C025FFD10E008B105D /* Top10ViewController.swift */,
+				ABDB049925FED55A008CD5BE /* ViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		341D09792633B516005C73B5 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				ABDB04AB25FEDA61008CD5BE /* SequenceGenerator.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		341D097A2633B525005C73B5 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB7F836725FFD59A004AC3F8 /* Top10.swift */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		341D097B2633B53C005C73B5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AB737A55262BA9BE005CAF3E /* Score.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		341D097C2633B54D005C73B5 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				AB03C103262C5AD000CD837F /* FredScoreService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		ABDB048925FED55A008CD5BE = {
 			isa = PBXGroup;
 			children = (
@@ -68,18 +127,15 @@
 		ABDB049425FED55A008CD5BE /* FredGame */ = {
 			isa = PBXGroup;
 			children = (
-				ABDB049525FED55A008CD5BE /* AppDelegate.swift */,
-				ABDB049725FED55A008CD5BE /* SceneDelegate.swift */,
-				ABDB049925FED55A008CD5BE /* ViewController.swift */,
-				AB0927C025FFD10E008B105D /* Top10ViewController.swift */,
-				ABDB049B25FED55A008CD5BE /* Main.storyboard */,
+				341D097C2633B54D005C73B5 /* service */,
+				341D097B2633B53C005C73B5 /* model */,
+				341D097A2633B525005C73B5 /* manager */,
+				341D09792633B516005C73B5 /* util */,
+				341D09782633B4F4005C73B5 /* controller */,
+				341D09772633B4D8005C73B5 /* delegate */,
+				341D09762633B4AF005C73B5 /* storyboard */,
 				ABDB049E25FED55B008CD5BE /* Assets.xcassets */,
-				ABDB04A025FED55B008CD5BE /* LaunchScreen.storyboard */,
 				ABDB04A325FED55B008CD5BE /* Info.plist */,
-				ABDB04AB25FEDA61008CD5BE /* SequenceGenerator.swift */,
-				AB7F836725FFD59A004AC3F8 /* Top10.swift */,
-				AB737A55262BA9BE005CAF3E /* Score.swift */,
-				AB03C103262C5AD000CD837F /* FredScoreService.swift */,
 				341D09732633A2F1005C73B5 /* User.txt */,
 			);
 			path = FredGame;
